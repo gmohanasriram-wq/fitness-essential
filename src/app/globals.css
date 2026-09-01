@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #111111;
+  --color-bg-muted: #1a1a1a;
+  --color-fg: #fafafa;
+  --color-fg-muted: #a3a3a3;
+  --color-fg-subtle: #737373;
+  --color-border: #2a2a2a;
+  --color-border-strong: #404040;
+  --color-accent: #dc2626;
+  --color-accent-muted: #b91c1c;
+  --color-accent-subtle: #991b1b;
+
+  --font-display: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif;
+  --font-body: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+
+  --spacing-section-y: clamp(2.5rem, 6vw, 6rem);
+  --spacing-section-x: clamp(1.5rem, 5vw, 4rem);
+  --container-max: 80rem;
+  --container-wide: 96rem;
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+@utility text-body-lg {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@utility text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@utility text-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@utility text-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--spacing-section-x);
+  }
+
+  .container-wide {
+    width: 100%;
+    max-width: var(--container-wide);
+    margin-inline: auto;
+    padding-inline: var(--spacing-section-x);
+  }
+
+  .section-pad {
+    padding-block: var(--spacing-section-y);
+  }
+
+  /* Hide Next.js dev overlay */
+  .next-dev-tools,
+  #__next_dev_tools__,
+  [data-next-dev-tools] {
+    display: none !important;
+  }
+}
+
+/* Subtle native CSS scroll-driven image settling: approaching (opacity 0.85, scale 1.02) -> settled (opacity 1.0, scale 1.0) */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  @keyframes cinematicImageSettle {
+    from {
+      opacity: 0.85;
+      transform: translateY(12px) scale(1.02);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1.0);
+    }
+  }
+
+  .parallax-media {
+    animation: cinematicImageSettle linear both;
+    animation-timeline: view();
+    animation-range: entry 10% exit 80%;
+    will-change: transform, opacity;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-media {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
