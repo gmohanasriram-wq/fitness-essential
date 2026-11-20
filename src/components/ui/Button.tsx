@@ -6,7 +6,7 @@ const base =
 
 const variants: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
-    'bg-[var(--color-accent)] text-[var(--color-bg)] hover:bg-[var(--color-accent-muted)] hover:shadow-lg hover:shadow-[var(--color-accent)]/20',
+    'bg-[var(--color-accent)] text-white font-semibold hover:bg-[var(--color-accent-muted)] hover:shadow-lg hover:shadow-[var(--color-accent)]/20',
   secondary:
     'border border-[var(--color-border)] text-[var(--color-fg)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-bg-elevated)] hover:text-white',
   ghost:
@@ -15,7 +15,7 @@ const variants: Record<NonNullable<ButtonProps['variant']>, string> = {
 
 const sizes: Record<NonNullable<ButtonProps['size']>, string> = {
   default: 'h-11 px-5 text-sm',
-  lg: 'h-12 px-6 text-[0.8125rem]',
+  lg: 'h-12 px-6 text-sm sm:text-base',
 };
 
 export function Button({

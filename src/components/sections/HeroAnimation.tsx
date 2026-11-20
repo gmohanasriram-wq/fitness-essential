@@ -16,7 +16,7 @@ export function HeroAnimation({ className }: HeroAnimationProps = {}) {
       </p>
 
       {/* Headline */}
-      <h1 className="text-[2.125rem] sm:text-[2.75rem] md:text-display text-[var(--color-fg)] mb-3.5 sm:mb-5 md:mb-8 tracking-tight font-medium leading-[1.04]">
+      <h1 className="text-display text-[var(--color-fg)] mb-3.5 sm:mb-5 md:mb-8 tracking-tight font-medium leading-[1.04]">
         {hero.headline.map((line, i) => (
           <span key={i} className="block">
             {line}
@@ -34,7 +34,7 @@ export function HeroAnimation({ className }: HeroAnimationProps = {}) {
         <LinkButton
           href={hero.primaryCta.href}
           size="lg"
-          className="w-full sm:w-auto text-center justify-center font-medium"
+          className="w-full sm:w-auto text-center justify-center font-medium min-h-[44px]"
         >
           {hero.primaryCta.label}
         </LinkButton>
@@ -42,7 +42,7 @@ export function HeroAnimation({ className }: HeroAnimationProps = {}) {
           href={hero.secondaryCta.href}
           variant="ghost"
           size="lg"
-          className="w-full sm:w-auto text-center justify-center"
+          className="w-full sm:w-auto text-center justify-center min-h-[44px]"
         >
           {hero.secondaryCta.label} →
         </LinkButton>

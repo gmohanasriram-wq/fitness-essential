@@ -31,7 +31,7 @@ export function Hero() {
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-center parallax-media scale-100 transition-transform duration-1000 ease-out"
+            className="object-cover object-center scale-100 transition-transform duration-1000 ease-out"
           />
 
           {/* Cinematic Vignette & Edge Blending */}
@@ -45,7 +45,7 @@ export function Hero() {
           <div className="absolute bottom-6 left-6 h-3 w-3 border-b border-l border-[var(--color-accent)] pointer-events-none z-10 hidden md:block" />
           <div className="absolute bottom-6 right-6 h-3 w-3 border-b border-r border-[var(--color-accent)] pointer-events-none z-10 hidden md:block" />
 
-          {/* Subtle actual logo brand badge (desktop only) */}
+          {/* Actual logo brand badge (tablet/desktop) */}
           <div className="absolute top-6 right-6 z-20 hidden md:flex items-center gap-2.5 bg-[var(--color-bg)]/85 backdrop-blur-md px-3 py-1.5 border border-[var(--color-border)]">
             <Image
               src="/fitness-essentials-logo.png"
@@ -55,21 +55,21 @@ export function Hero() {
               className="h-4 w-auto opacity-80 object-contain"
             />
             <span className="text-[10px] tracking-widest text-[var(--color-fg-muted)] font-mono uppercase">
-              Concept Space
+              Kodungaiyur
             </span>
           </div>
 
-          {/* Floating Location & Coordinates Badge (desktop only) */}
+          {/* Floating Location Badge (desktop only) */}
           <div className="absolute bottom-8 right-8 z-20 hidden md:flex items-center gap-3.5 bg-[var(--color-bg-elevated)]/90 backdrop-blur-md border border-[var(--color-border)] px-4 py-3 shadow-2xl">
             <div className="flex h-8 w-8 items-center justify-center rounded-none bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30 text-[var(--color-accent)] shrink-0">
               <MapPin className="h-4 w-4" />
             </div>
             <div className="text-left">
-              <p className="text-eyebrow text-[var(--color-fg)] text-[11px] tracking-wider leading-tight font-mono">
-                13.1415° N, 80.2520° E
+              <p className="text-eyebrow text-[var(--color-fg)] text-[11px] tracking-wider leading-tight">
+                KODUNGAIYUR
               </p>
               <p className="text-eyebrow text-[var(--color-fg-muted)] text-[10px] tracking-wider mt-0.5">
-                KODUNGAIYUR, CHENNAI
+                CHENNAI · TAMIL NADU
               </p>
             </div>
           </div>

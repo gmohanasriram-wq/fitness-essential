@@ -82,12 +82,6 @@ export function PlaceholderImage({
         </>
       )}
 
-      {/* Corner framing reticles (tablet/desktop) */}
-      <div className="absolute top-3.5 left-3.5 h-2.5 w-2.5 border-t border-l border-[var(--color-accent)]/80 pointer-events-none hidden sm:block" />
-      <div className="absolute top-3.5 right-3.5 h-2.5 w-2.5 border-t border-r border-[var(--color-accent)]/80 pointer-events-none hidden sm:block" />
-      <div className="absolute bottom-3.5 left-3.5 h-2.5 w-2.5 border-b border-l border-[var(--color-accent)]/80 pointer-events-none hidden sm:block" />
-      <div className="absolute bottom-3.5 right-3.5 h-2.5 w-2.5 border-b border-r border-[var(--color-accent)]/80 pointer-events-none hidden sm:block" />
-
       {/* Metadata / Labels */}
       {src ? (
         <div className="absolute inset-0 flex flex-col justify-between p-3.5 sm:p-5 pointer-events-none">

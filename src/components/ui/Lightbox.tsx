@@ -74,7 +74,7 @@ export function Lightbox({ items, index, onClose }: LightboxProps) {
             type="button"
             onClick={onClose}
             aria-label="Close lightbox"
-            className="absolute top-6 right-6 z-10 flex h-10 w-10 items-center justify-center text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-bg)]/80 backdrop-blur-sm border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
           >
             <X className="h-5 w-5" />
           </button>
@@ -88,7 +88,7 @@ export function Lightbox({ items, index, onClose }: LightboxProps) {
                   goPrev();
                 }}
                 aria-label="Previous image"
-                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+                className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[var(--color-bg)]/80 backdrop-blur-sm border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
@@ -99,7 +99,7 @@ export function Lightbox({ items, index, onClose }: LightboxProps) {
                   goNext();
                 }}
                 aria-label="Next image"
-                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+                className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[var(--color-bg)]/80 backdrop-blur-sm border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
@@ -112,14 +112,14 @@ export function Lightbox({ items, index, onClose }: LightboxProps) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: reduced ? 0 : 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-[min(92vw,1400px)] max-h-[80vh]"
+            className="relative max-w-[min(94vw,1400px)] max-h-[75vh] sm:max-h-[80vh]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={current.src}
               alt={current.alt}
               className={cn(
-                'max-h-[80vh] w-auto max-w-full object-contain',
+                'max-h-[65vh] sm:max-h-[75vh] w-auto max-w-full object-contain',
                 'border border-[var(--color-border)]'
               )}
             />

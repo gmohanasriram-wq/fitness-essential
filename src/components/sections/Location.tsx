@@ -56,7 +56,7 @@ export function Location() {
                 href={location.directionsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block relative aspect-[4/5] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-muted)]"
+                className="group block relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/5] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-elevated)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-muted)]"
                 aria-label="Open directions in Google Maps"
               >
                 {/* Hand-drawn topographic-style map composition */}

@@ -32,7 +32,11 @@ export const metadata: Metadata = {
     description:
       'A premium fitness facility in Kodungaiyur, Chennai. Disciplined training environment, curated equipment, and a commitment to consistency.',
   },
-  robots: { index: false, follow: false },
+  icons: {
+    icon: '/fitness-essentials-logo.png',
+    apple: '/fitness-essentials-logo.png',
+  },
+  robots: { index: true, follow: true },
 };
 
 const jsonLd = {

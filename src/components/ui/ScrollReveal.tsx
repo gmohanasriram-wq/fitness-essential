@@ -63,11 +63,11 @@ export function ScrollReveal({
       return () => clearTimeout(id);
     }
 
-    // If already in top viewport on initial page load, settle immediately
+    // If already in viewport on initial page load, settle immediately
     const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.85) {
-      const id = setTimeout(() => setIsSettled(true), 0);
-      return () => clearTimeout(id);
+    if (rect.top < window.innerHeight) {
+      setIsSettled(true);
+      return;
     }
 
     const observer = new IntersectionObserver(

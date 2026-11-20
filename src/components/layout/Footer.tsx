@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-5 space-y-4">
             <a
               href="#top"
-              className="inline-block flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+              className="inline-flex items-center min-h-[44px] flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
               aria-label="Fitness Essentials — back to top"
             >
               <Image
@@ -17,7 +17,7 @@ export function Footer() {
                 alt="Fitness Essentials logo"
                 width={140}
                 height={32}
-                className="h-6 md:h-7 w-auto object-contain"
+                className="h-8 md:h-9 w-auto object-contain"
               />
             </a>
             <p className="text-body text-[var(--color-fg-muted)] max-w-md">
@@ -30,12 +30,12 @@ export function Footer() {
 
           <div className="md:col-span-3 space-y-4">
             <p className="text-eyebrow text-[var(--color-fg)]">Navigate</p>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {footer.quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-label text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors"
+                    className="text-label text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors py-1.5 min-h-[40px] sm:min-h-0 inline-flex items-center"
                   >
                     {link.label}
                   </a>
@@ -53,7 +53,7 @@ export function Footer() {
               href="https://www.google.com/maps/search/?api=1&query=Fitness+Essentials+Kodungaiyur+Chennai+Tamil+Nadu"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-eyebrow text-[var(--color-accent)] hover:text-[var(--color-fg)] transition-colors border-b border-[var(--color-accent)]/40 hover:border-[var(--color-fg)] pb-1"
+              className="inline-flex items-center min-h-[44px] text-eyebrow text-[var(--color-accent)] hover:text-[var(--color-fg)] transition-colors border-b border-[var(--color-accent)]/40 hover:border-[var(--color-fg)] pb-1"
             >
               Get directions →
             </a>

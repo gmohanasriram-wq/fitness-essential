@@ -50,16 +50,16 @@ export function Navigation() {
         <div className="container-page flex h-16 md:h-20 items-center justify-between">
           <a
             href="#top"
-            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+            className="flex items-center flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
             aria-label="Fitness Essentials — back to top"
           >
             <Image
               src="/fitness-essentials-logo.png"
               alt="Fitness Essentials logo"
-              width={140}
-              height={32}
+              width={60}
+              height={60}
               priority
-              className="h-7 md:h-8 w-auto object-contain"
+              className="h-12 w-12 md:h-[54px] md:w-[54px] lg:h-[60px] lg:w-[60px] object-contain"
             />
           </a>
 
@@ -86,7 +86,7 @@ export function Navigation() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden flex h-10 w-10 items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/80 hover:bg-[var(--color-bg-elevated)] text-[var(--color-fg)] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+            className="lg:hidden flex h-11 w-11 items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/80 hover:bg-[var(--color-bg-elevated)] text-[var(--color-fg)] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -102,10 +102,10 @@ export function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduced ? { opacity: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 lg:hidden bg-[var(--color-bg)]/98 backdrop-blur-xl flex flex-col justify-between pt-24 pb-8 px-6 overflow-y-auto"
+            className="fixed inset-0 z-40 lg:hidden bg-[var(--color-bg)]/98 backdrop-blur-xl flex flex-col justify-between pt-20 sm:pt-24 pb-6 px-6 max-h-[100dvh] overflow-y-auto"
             aria-hidden={!open}
           >
-            <nav className="flex flex-col gap-5 pt-4" aria-label="Mobile">
+            <nav className="flex flex-col gap-3 sm:gap-5 pt-2 sm:pt-4" aria-label="Mobile">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
@@ -117,7 +117,7 @@ export function Navigation() {
                     delay: reduced ? 0 : 0.05 + i * 0.05,
                     duration: 0.3,
                   }}
-                  className="flex items-center justify-between text-h2 text-[var(--color-fg)] border-b border-[var(--color-border)]/80 pb-5 hover:text-[var(--color-accent)] transition-colors"
+                  className="flex items-center justify-between text-h2 text-[var(--color-fg)] border-b border-[var(--color-border)]/80 py-2.5 sm:pb-5 min-h-[44px] hover:text-[var(--color-accent)] transition-colors"
                 >
                   <span>{link.label}</span>
                   <span className="text-eyebrow font-mono text-[var(--color-accent)] text-xs">
@@ -127,7 +127,7 @@ export function Navigation() {
               ))}
             </nav>
 
-            <div className="pt-8 space-y-4">
+            <div className="pt-6 sm:pt-8 space-y-4">
               <div className="flex items-center justify-between text-eyebrow text-[var(--color-fg-subtle)] text-[11px] pb-2">
                 <span>KODUNGAIYUR</span>
                 <span>CHENNAI, TAMIL NADU</span>

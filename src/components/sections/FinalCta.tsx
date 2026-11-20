@@ -7,7 +7,7 @@ export function FinalCta() {
     <section className="section-pad bg-[var(--color-bg)] relative overflow-hidden">
       {/* Subtle crimson ambient glow */}
       <div
-        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] pointer-events-none"
+        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[400px] pointer-events-none"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(225,29,72,0.12) 0%, transparent 60%)',
@@ -40,14 +40,15 @@ export function FinalCta() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.24}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
-              <LinkButton href={finalCta.primaryCta.href} size="lg">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4">
+              <LinkButton href={finalCta.primaryCta.href} size="lg" className="w-full sm:w-auto min-h-[44px]">
                 {finalCta.primaryCta.label}
               </LinkButton>
               <LinkButton
                 href={finalCta.secondaryCta.href}
                 variant="secondary"
                 size="lg"
+                className="w-full sm:w-auto min-h-[44px]"
               >
                 {finalCta.secondaryCta.label}
               </LinkButton>
